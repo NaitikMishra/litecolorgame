@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            this is a color game 
+        </title>
+        <script type="text/javascript">
+        var ren0,ren1,ren2,ren3,ren4,ren5,ren6,ren7,ren8,check,choose,car;
+            function game(a)
+            {
+                if(a==7)
+                {
+                 ren0=Math.floor(Math.random()*(255-0)+0);
+                 ren1=Math.floor(Math.random()*(255-0)+0);
+                 ren2=Math.floor(Math.random()*(255-0)+0);
+                 ren3=Math.floor(Math.random()*(255-0)+0);
+                 ren4=Math.floor(Math.random()*(255-0)+0);
+                 ren5=Math.floor(Math.random()*(255-0)+0);
+                 ren6=Math.floor(Math.random()*(255-0)+0);
+                 ren7=Math.floor(Math.random()*(255-0)+0);
+                 ren8=Math.floor(Math.random()*(255-0)+0);
+                 let car1=[ren0,ren1,ren2];
+                 let car2=[ren3,ren4,ren5];
+                 let car3=[ren6,ren7,ren8];
+                 car=[car1,car2,car3];
+                 choose=Math.floor(Math.random()*(2-0)+0);
+                 
+                }
+                var colors1="rgb("+(ren3)+","+( ren4)+","+(ren5)+")";
+                var colors2="rgb("+(ren6)+","+ (ren7)+","+(ren8)+")";
+                var colors6="rgb("+ren0+","+ ren1+","+ren2+")";
+                if(a==7)
+                {
+                document.getElementById("first").style.backgroundColor= colors6;
+                document.getElementById("second").style.backgroundColor= colors1;
+                document.getElementById("third").style.backgroundColor= colors2;
+                var value1=("ren"+(choose)).valueOf();
+                document.getElementById("jadu").innerHTML="RGB "+car[choose][0]+" "+car[choose][1]+" "+car[choose][2];
+                check= "rgb("+car[choose][0]+","+car[choose][1]+","+car[choose][2]+")";
+                }
+                if(a==6)
+                    {
+                        if(colors6.localeCompare(check)==0)
+                        alert("shi hai ");
+                        else
+                        alert("false");
+                    }
+                    if(a==1)
+                    {
+                        if(colors1.localeCompare(check)==0)
+                        alert("shi hai ");
+                        else
+                        alert("false");
+                    }
+                    if(a==2)
+                    {
+                        if(colors2.localeCompare(check)==0)
+                        alert("shi hai ");
+                        else
+                        alert("false");
+                    }
+                }     
+        </script>
+        <style>
+            body
+            {
+              background-color: black;  
+            }
+            #particle-js{
+            height: 760px;
+            width: 1536px;
+            background-color: black;
+            float: center;
+            align-items: center;
+            position: absolute;
+        }
+            #class
+            {
+                top: auto;
+                height: 20%;
+                width: 100%;
+                background-color: #2196f3;
+                text-align: center;
+                line-height: 1cm;
+            }
+            #class:hover
+            {
+                box-shadow: 0 0 50px #2196f3, 0 0 50px #2196f3, 0 0 50px #2196f3, 0 0 50px #2196f3;
+            }
+            #top
+            {
+                position: fixed;
+            }
+            #first
+            {
+                position: fixed;
+                top: 35%;
+                left: 23%;
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                line-height: 2cm;
+            }
+            #first:hover
+            {
+                box-shadow: 0 0 10px red, 0 0 50px red, 0 0 50px red, 0 0 50px red;
+            }
+            #second
+            {
+                position: fixed;
+                top: 35%;
+                left: 45%;
+                width: 200px;
+                height: 200px;
+                background-color: rgb(89, 0, 255);
+            }
+            #second:hover
+            {
+                box-shadow: 0 0 10px red, 0 0 50px red, 0 0 50px red, 0 0 50px red;
+            }
+            #third
+            {
+                top: 35%;
+                position: fixed;
+                left: 69%;
+                width: 200px;
+                height: 200px;
+                background-color: rgb(179, 255, 0);
+            }
+            #third:hover
+            {
+                box-shadow: 0 0 10px red, 0 0 50px red, 0 0 50px red, 0 0 50px red;
+            }
+        </style>
+        <body onload="javascript:game('7')">
+            <div id="particle-js"> 
+            <div id="class">
+                <h1 style="font-size: 30px;">The great </h1><h2 id="jadu" style="color: rgb(59, 27, 199);">RGB </h2><h1>game</h1>
+            </div>
+            <div id="top">
+            <div>
+                <input id="first" type="button" onclick="game('6')">
+            </div>
+            <div >
+                <input id="second" type="button" onclick="game('1')">
+            </div>
+            <div >
+                <input id="third" type="button" onclick="game('2')">
+            </div>
+            </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS.load('particle-js',
+            'particles.json',function(){
+                console.log("kam chal rha hai");
+            });
+        </script>
+        </body>
+    </head>
+</html>
